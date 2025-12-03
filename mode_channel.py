@@ -9,9 +9,10 @@ def load_speaker_mode_channel_map():
     ignored = set()
 
     for col, (mode, channel) in {
-        "spontaneous_studio": ("spontaneous", "studio"),
-        "spontaneous_telephone": ("spontaneous", "telephone"),
-        "planned_studio": ("planned", "studio"),
+        "SS": ("spontaneous", "studio"),
+        "ST": ("spontaneous", "telephone"),
+        "PS": ("planned", "studio"),
+        "PT": ("planned", "telephone"),
     }.items():
         for spks in df[col].dropna():
             for spk in str(spks).split(";"):
